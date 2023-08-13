@@ -47,4 +47,4 @@ public class ShipMovement : NetworkBehaviour
 
         transform.Translate(Vector3.forward * currentSpeed * Time.deltaTime);
     }
-
+}
