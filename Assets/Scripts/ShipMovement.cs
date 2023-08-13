@@ -20,10 +20,7 @@ public class ShipMovement : NetworkBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!IsOwner)
-        {
-            return;
-        }
+        if (!IsOwner) return;
 
         Vector3 rotation = new Vector3(0, Input.GetAxis("Horizontal"), 0);
         transform.Rotate(rotation * rotationSpeed * Time.deltaTime);
@@ -51,8 +48,3 @@ public class ShipMovement : NetworkBehaviour
         transform.Translate(Vector3.forward * currentSpeed * Time.deltaTime);
     }
 
-    private void FixedUpdate()
-    {
-        
-    }
-}

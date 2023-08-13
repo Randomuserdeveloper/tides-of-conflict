@@ -4,7 +4,7 @@ using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class NetworkMangerUI : MonoBehaviour
+public class NetworkMangerUI : NetworkBehaviour
 {
     [SerializeField] private Button hostButton;
     [SerializeField] private Button clientButton;
@@ -17,7 +17,7 @@ public class NetworkMangerUI : MonoBehaviour
         hostButton.onClick.AddListener(() =>
         {
             NetworkManager.Singleton.StartHost();
-            ShipSystem.SetActive(true);
+/*            ShipSystem.SetActive(true);*/
             Destroy(hostButton.gameObject);
             Destroy(clientButton.gameObject);
         });
@@ -25,7 +25,7 @@ public class NetworkMangerUI : MonoBehaviour
         clientButton.onClick.AddListener(() =>
         {
             NetworkManager.Singleton.StartClient();
-            ShipSystem.SetActive(true);
+/*            ShipSystem.SetActive(true);*/
             Destroy(hostButton.gameObject);
             Destroy(clientButton.gameObject);
         });
