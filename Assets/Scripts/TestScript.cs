@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.UI;
@@ -8,52 +6,56 @@ public class TestScript : NetworkBehaviour
 {
     [SerializeField] private Button hostButton;
     [SerializeField] private Button clientButton;
-    [SerializeField] private GameObject ShipCaptain1;
-    [SerializeField] private GameObject ShipCaptain2;
+    [SerializeField] private GameObject ShipCaptain1 = null;
+    [SerializeField] private GameObject ShipCaptain2 = null;
     [SerializeField] private Camera StationaryCamera;
     private Camera[] cameraArray = new Camera[2];
 
+    private bool hasAssignedShip = false; // To track if the player has already been assigned a ship
 
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         cameraArray[0] = ShipCaptain1.GetComponent<Camera>();
         cameraArray[1] = ShipCaptain2.GetComponent<Camera>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
         if (!IsOwner) return;
 
-        hostButton.onClick.AddListener(() =>
+        if (!hasAssignedShip)
         {
-            AssignShipToPlayerServerRpc();
-        });
+            hostButton.onClick.AddListener(() =>
+            {
+                AssignShipToPlayerServerRpc(NetworkManager.Singleton.LocalClientId);
+                hasAssignedShip = true;
+            });
 
-        clientButton.onClick.AddListener(() =>
-        {
-            AssignShipToPlayerServerRpc();
-        });
+            clientButton.onClick.AddListener(() =>
+            {
+                AssignShipToPlayerServerRpc(NetworkManager.Singleton.LocalClientId);
+                hasAssignedShip = true;
+            });
+        }
     }
 
     [ServerRpc]
-    public void AssignShipToPlayerServerRpc(ServerRpcParams serverRpcParams = default)
+    private void AssignShipToPlayerServerRpc(ulong clientID, ServerRpcParams serverRpcParams = default)
     {
-        var clientID = serverRpcParams.Receive.SenderClientId;
-
-        if (clientID == 0)
+        if (clientID == NetworkManager.Singleton.LocalClientId)
         {
-            ShipCaptain1.GetComponent<NetworkObject>().ChangeOwnership(clientID);
-            StationaryCamera.gameObject.SetActive(false);
-            cameraArray[0].gameObject.SetActive(true);
-        }
-
-        if (clientID == 1)
-        {
-            ShipCaptain2.GetComponent<NetworkObject>().ChangeOwnership(clientID);
-            StationaryCamera.gameObject.SetActive(false);
-            cameraArray[1].gameObject.SetActive(true);
+            if (clientID == 0)
+            {
+                ShipCaptain1.GetComponent<NetworkObject>().ChangeOwnership(clientID);
+                StationaryCamera.gameObject.SetActive(false);
+                cameraArray[0].gameObject.SetActive(true);
+            }
+            else if (clientID == 1)
+            {
+                ShipCaptain2.GetComponent<NetworkObject>().ChangeOwnership(clientID);
+                StationaryCamera.gameObject.SetActive(false);
+                cameraArray[1].gameObject.SetActive(true);
+            }
         }
     }
 }
