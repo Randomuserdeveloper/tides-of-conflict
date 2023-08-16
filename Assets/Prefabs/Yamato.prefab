@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8487958106906026498}
   - component: {fileID: 6801527888869527006}
-  - component: {fileID: 2186681428516192535}
   - component: {fileID: 230939152968208611}
   m_Layer: 0
   m_Name: CaptainView
@@ -85,14 +84,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &2186681428516192535
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 504963513839755414}
-  m_Enabled: 1
 --- !u!114 &230939152968208611
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -413,7 +404,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8872888923368998270}
   - component: {fileID: 8330772172066709632}
-  - component: {fileID: 1862830040136511485}
   - component: {fileID: 6234067492381826026}
   m_Layer: 0
   m_Name: GunnerView1
@@ -488,14 +478,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &1862830040136511485
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2763425411419843143}
-  m_Enabled: 1
 --- !u!114 &6234067492381826026
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -814,7 +796,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4419810485458695428}
-  - component: {fileID: 6922584185936770922}
   - component: {fileID: 3652437097284549450}
   - component: {fileID: 4519452401037627257}
   - component: {fileID: 726981933391040758}
@@ -845,27 +826,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &6922584185936770922
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8192877719381416791}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 30, y: 15, z: 180}
-  m_Center: {x: 0, y: 8, z: 0}
 --- !u!114 &3652437097284549450
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -941,7 +901,6 @@ GameObject:
   m_Component:
   - component: {fileID: 120392751520049865}
   - component: {fileID: 3994380278106012500}
-  - component: {fileID: 8856012279440894344}
   - component: {fileID: 6094319847278587527}
   m_Layer: 0
   m_Name: GunnerView2
@@ -1016,14 +975,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &8856012279440894344
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8679443076198798574}
-  m_Enabled: 1
 --- !u!114 &6094319847278587527
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1078,7 +1029,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3974373915490432836}
   - component: {fileID: 447156466965886601}
-  - component: {fileID: 984988615215628171}
   - component: {fileID: 4296427473709661994}
   m_Layer: 0
   m_Name: GunnerView3
@@ -1153,14 +1103,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &984988615215628171
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9202128541597711140}
-  m_Enabled: 1
 --- !u!114 &4296427473709661994
 MonoBehaviour:
   m_ObjectHideFlags: 0
